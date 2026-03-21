@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-4-template",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "latest",
+    "@tailwindcss/vite": "latest",
+    "nuxt": "latest",
+    "nuxt-charts": "^2.1.3",
+    "pinia": "latest",
+    "tailwindcss": "latest",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "daisyui": "latest"
+  }
+}
