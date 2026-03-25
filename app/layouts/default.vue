@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-full flex-col">
     <div class="navbar bg-base-100 shadow-sm">
-      <div class="navbar-start">
+      <div class="navbar-start w-auto">
         <div class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
             <svg
@@ -30,7 +30,7 @@
         </div>
         <a class="btn btn-ghost text-xl">Probe VA</a>
       </div>
-      <div class="navbar-center hidden lg:flex">
+      <div class="navbar-center hidden lg:flex w-auto mx-auto">
         <ul class="menu menu-horizontal px-1">
           <!-- pages -->
           <li v-for="route in routes">

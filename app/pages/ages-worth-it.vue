@@ -75,15 +75,12 @@ responses.value.forEach((entry) => {
   ageResponses[entry.age].push(entry.worthIt);
 });
 for (const key in ageResponses) {
-  if (ageResponses[key as keyof typeof ageResponses].length > 0) {
+  let ageRange = ageResponses[key as keyof typeof ageResponses];
+  if (ageRange.length > 0) {
     data.value.push({
-      age: key,
-      worthIt:
-        ageResponses[key as keyof typeof ageResponses].reduce(
-          (a, b) => a + b,
-          0,
-        ) / ageResponses[key as keyof typeof ageResponses].length,
-      count: ageResponses[key as keyof typeof ageResponses].length,
+      age: `${key} (${ageRange.length} Antwort${ageRange.length > 1 ? "en" : ""})`,
+      worthIt: ageRange.reduce((a, b) => a + b, 0) / ageRange.length,
+      count: ageRange.length,
     });
   }
 }
