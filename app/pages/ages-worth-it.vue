@@ -34,7 +34,7 @@ const data = ref<{ worthIt: number; age: string; count: number }[]>([]);
 
 const valueLabel = ref<ValueLabel>({
   label: (d: { x: number; y: number }, index: number) => {
-    return d.y.toFixed(2);
+    return (data.value[d.x]?.count ?? 0).toString();
   },
   backgroundColor: "var(--color-base-100)",
   color: "var(--color-base-content)",
@@ -94,5 +94,8 @@ html,
 body,
 #__nuxt {
   height: 100%;
+}
+svg {
+  overflow: visible;
 }
 </style>
