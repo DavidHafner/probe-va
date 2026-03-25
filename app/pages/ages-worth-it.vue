@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full overflow-hidden" ref="parent">
+  <div class="h-full flex flex-col overflow-hidden" ref="parent">
     <BarChart
       :data="data"
       :categories="categories"
@@ -8,17 +8,32 @@
       :yFormatter="yFormatter"
       xLabel="Alter"
       yLabel="Durchschnittswert"
-      class="h-full p-4"
+      class="grow p-4"
       :yAxis="['worthIt']"
       :valueLabel="valueLabel"
       xAxis="age"
       :xNumTicks="5"
     />
+    <p class="text-center">
+      Bei negativen Werten wird die Zahl nicht angezeigt. Ich habe das dem
+      Entwickler
+      <NuxtLink
+        to="https://github.com/dennisadriaans/vue-chrts/issues/122"
+        class="link link-hover link-accent"
+      >
+        gemeldet
+      </NuxtLink>
+      und warte aktuell auf Rückmeldung.
+    </p>
   </div>
 </template>
 <script setup lang="ts">
 definePageMeta({
   name: "Lohnt es sich (Meinung nach alter)",
+});
+
+useHead({
+  title: "Lohnt es sich (Meinung nach alter)",
 });
 import type { ValueLabel } from "~~/node_modules/vue-chrts/dist/components/BarChart/BarChart.d.ts";
 import responseParser from "../helpers/responseParser";
@@ -44,7 +59,7 @@ const valueLabel = ref<ValueLabel>({
 
 const categories = {
   worthIt: {
-    name: "Sind Sie persönlich der Meinung, dass es sich lohnt zu heiraten?",
+    name: "Durchschnittliche Meinung",
     color: "#3b82f6",
   },
   //   count: {

@@ -20,6 +20,10 @@
 definePageMeta({
   name: "Gründe fürs Heiraten (nach Alter)",
 });
+
+useHead({
+  title: "Gründe fürs Heiraten (nach Alter)",
+});
 import type { ValueLabel } from "~~/node_modules/vue-chrts/dist/components/BarChart/BarChart.d.ts";
 import responseParser from "../helpers/responseParser";
 import type { RawResponse, Response } from "../types/response.type";
