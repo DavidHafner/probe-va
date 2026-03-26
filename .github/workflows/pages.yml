@@ -14,7 +14,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       # Pick your own package manager and build script
       - run: bun install
-      - run: sed -i '119c\\return i.y + (((t = a.valueLabel) == null ? void 0 : t.labelSpacing) ?? 0) * (i.y<0?-1:1);' ./node_modules/vue-chrts/dist/components/BarChart/BarChart.js
+      - run: "sed -i '119c\\return i.y + (((t = a.valueLabel) == null ? void 0 : t.labelSpacing) ?? 0) * (i.y<0?-1:1);' ./node_modules/vue-chrts/dist/components/BarChart/BarChart.js"
       - run: NUXT_APP_BASE_URL=/probe-va/ bun x nuxt build --preset github_pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
