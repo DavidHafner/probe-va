@@ -14,17 +14,6 @@
       xAxis="age"
       :xNumTicks="5"
     />
-    <p class="text-center">
-      Bei negativen Werten wird die Zahl nicht angezeigt. Ich habe das dem
-      Entwickler
-      <NuxtLink
-        to="https://github.com/dennisadriaans/vue-chrts/issues/122"
-        class="link link-hover link-accent"
-      >
-        gemeldet
-      </NuxtLink>
-      und warte aktuell auf Rückmeldung.
-    </p>
   </div>
 </template>
 <script setup lang="ts">
