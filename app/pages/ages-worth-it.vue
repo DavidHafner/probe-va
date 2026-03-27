@@ -43,7 +43,7 @@ const valueLabel = ref<ValueLabel>({
   backgroundColor: "var(--color-base-100)",
   color: "var(--color-base-content)",
   labelFontSize: 16,
-  labelSpacing: 0.015,
+  labelSpacing: 0.04,
 });
 
 const categories = {
